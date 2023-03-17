@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import { getXY, UTG_MAX_6_RANGE } from "./utils/range2";
+import { getXY, getXYFromHands, UTG_MAX_6_RANGE } from "./utils/range2";
 import { generateHands } from "./utils/cards";
 
 function App() {
   const [count, setCount] = useState(0);
 
   React.useEffect(() => {
-    console.log(UTG_MAX_6_RANGE);
-    const xy = getXY(UTG_MAX_6_RANGE);
-    console.log(
-      xy
-        .map((v: any[]) => {
-          return generateHands(v, v[0] < v[1] ? true : false);
-        })
-        .flat(1)
-    );
+    // console.log(UTG_MAX_6_RANGE);
+    // const xy = getXY(UTG_MAX_6_RANGE);
+    // console.log(
+    //   xy
+    //     .map((v: any[]) => {
+    //       return generateHands(v, v[0] < v[1] ? true : false);
+    //     })
+    //     .flat(1)
+    // );
+    console.log(getXYFromHands("S1", "S2"));
   }, []);
 
   return (

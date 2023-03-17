@@ -44,12 +44,12 @@ export const generateHands = ([num1, num2]: Number[], isSuited: boolean) => {
   const hands: Array<string> = [];
   if (isSuited) {
     SHAPE.forEach((shape) => {
-      hands.push(`${shape}${num1}${shape}${num2}`);
+      hands.push(`${shape}${num1},${shape}${num2}`);
     });
   } else {
     SHAPE.forEach((shape1, index) => {
       SHAPE.slice(index + 1).forEach((shape2) => {
-        hands.push(`${shape1}${num1}${shape2}${num2}`);
+        hands.push(`${shape1}${num1},${shape2}${num2}`);
       });
     });
   }

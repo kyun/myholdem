@@ -28,3 +28,23 @@ export const getXY = (arr: number[][]) => {
   });
   return result;
 };
+
+const isSuited = (hand1: string, hand2: string) => {
+  const shape1 = hand1[0];
+  const shape2 = hand2[0];
+  return shape1 === shape2;
+};
+const getHandValue = (hand: string) => {
+  const value = hand.slice(1);
+  return Number(value);
+};
+
+// input 2 hands and return its x,y
+export const getXYFromHands = (hand1: string, hand2: string) => {
+  const x = getHandValue(hand1);
+  const y = getHandValue(hand2);
+  if (isSuited(hand1, hand2)) {
+    return [x, y];
+  }
+  return [y, x];
+};

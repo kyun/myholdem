@@ -1,0 +1,8 @@
+// babelrc
+{
+  "env": {
+    "test": {
+      "presets": ["@babel/preset-env"]
+    }
+  }
+}
